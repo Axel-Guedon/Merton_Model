@@ -20,8 +20,6 @@ Importation des données
 
 df = pd.read_excel('output_dataset.xlsx', engine='openpyxl')
 
-# print(df)
-
 
 '''
 Fonctions auxiliaires
@@ -78,7 +76,7 @@ def calculate_pd(row):
     interest_rate = row['Taux sans risque']
     maturity = row['Maturité']
     
-    init_condition = [debt + equity_value, equity_volatility] # pourquoi déjà ?
+    init_condition = [debt + equity_value, equity_volatility] 
     
     # Résoudre pour obtenir la valeur de l'entreprise et sa volatilité
     firm_value, firm_volatility = solve_fsolve(init_condition, debt, interest_rate, maturity, equity_value, equity_volatility)[0]
